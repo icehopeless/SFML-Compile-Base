@@ -5,3 +5,7 @@ base com makefile para compilar um programa usando a biblioteca sfml
 ```cmd
 mingw32-make
 ```
+ou 
+```cmd
+make
+```
