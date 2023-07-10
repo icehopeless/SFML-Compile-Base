@@ -1,14 +1,17 @@
 all: compile link run
 
 compile:
-	g++ -IC:\SFML-2.5.1\include -c main4.cpp
-	g++ -IC:\SFML-2.5.1\include -c main3.cpp
-	g++ -IC:\SFML-2.5.1\include -c main2.cpp
-	g++ -IC:\SFML-2.5.1\include -c main.cpp //included outhers mains
+	g++ -g -c -IC:\SFML-2.5.1\include -c main4.cpp -lsfml-graphis //..
+	g++ -g -c -IC:\SFML-2.5.1\include -c main3.cpp -lsfml-graphis //..
+	g++ -g -c -IC:\SFML-2.5.1\include -c main2.cpp -lsfml-graphis //..
+	g++ -g -c -IC:\SFML-2.5.1\include -c main.cpp  lsfml-graphis //..
+	
+	//includ outhers mains
 
 link:
-	g++ main.o -o main -LC:\SFML-2.5.1\lib -lsfml-audio -lsfml-graphics -lsfml-window -lsfml-system
+	g++ main.o -o main -LC:\SFML-2.5.1\lib -lsfml-audio -lsfml-graphics -lsfml-window -lsfml-system main2.o main3.o main4.o
 	
 	
 run:
 	./main.exe
+	//or main.out
