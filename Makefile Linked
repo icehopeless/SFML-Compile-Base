@@ -1,4 +1,4 @@
-all: compile link run
+all: compile link delete run 
 
 compile:
 	g++ -g -c -IC:\SFML-2.5.1\include -c main4.cpp -lsfml-graphis //..
@@ -9,9 +9,11 @@ compile:
 	//includ outhers mains
 
 link:
-	g++ main.o -o main -LC:\SFML-2.5.1\lib -lsfml-audio -lsfml-graphics -lsfml-window -lsfml-system main2.o main3.o main4.o
+	g++ *.o -o main -LC:\SFML-2.5.1\lib -lsfml-audio -lsfml-graphics -lsfml-window -lsfml-system 
 	
 	
 run:
 	./main.exe
 	//or main.out
+delete:
+	rm -rf *.o 
